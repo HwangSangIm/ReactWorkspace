@@ -23,7 +23,7 @@ const mapResult1 = arr2.map((item, idx, arr) => {
   console.log(idx, item);
   return item * 2;
 });
-
+console.log(mapResult1);
 //map 응용
 let names = arr1.map((item) => item.name);
 
