@@ -1,8 +1,6 @@
 import './TodoItem.css'
 
 function TodoItem({id,isDone,content,date,onDelete,onUpdate}) {
-
-  
   const onClickDeleteButton = ()=> {
     onDelete(id);
   };

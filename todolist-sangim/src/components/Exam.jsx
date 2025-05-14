@@ -1,4 +1,4 @@
-import { act, useReducer } from "react"
+import { useReducer } from "react"
 
 function Exam() {
     function reducer(state,action){
