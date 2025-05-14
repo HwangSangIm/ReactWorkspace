@@ -26,7 +26,7 @@ const mockData = [
 
 ]
 
-function App() {
+function App_todolist() {
   const [todos,setTodos] = useState(mockData);
   const idRef = useRef(3);
   const onCreate = (content)=>{
@@ -59,4 +59,4 @@ function App() {
   )
 }
 
-export default App
+export default App_todolist
