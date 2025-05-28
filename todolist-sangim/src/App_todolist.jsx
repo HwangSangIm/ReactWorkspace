@@ -2,7 +2,7 @@ import './App.css'
 import Header from './components/Header'
 import Editor from './components/Editor'
 import List from './components/List'
-import { useState,useRef } from 'react'
+import { useState,useRef,createContext } from 'react'
 
 const mockData = [
   {
@@ -26,7 +26,10 @@ const mockData = [
 
 ]
 
+export const TodoContext = createContext();
+
 function App_todolist() {
+
   const [todos,setTodos] = useState(mockData);
   const idRef = useRef(3);
   const onCreate = (content)=>{
@@ -53,8 +56,10 @@ function App_todolist() {
   return (
     <div className='App'>
       <Header/>
-      <Editor onCreate={onCreate}/>
-      <List todos={todos} onDelete={onDelete} onUpdate={onUpdate}/>
+      <TodoContext.Provider value={{todos, onCreate , onDelete , onUpdate}}>
+        <Editor />
+        <List />
+      </TodoContext.Provider>
     </div>
   )
 }

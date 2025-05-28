@@ -1,16 +1,17 @@
 import { useReducer } from "react"
+function reducer(state,action){
+    switch (action.type) {
+        case "INCREASE":
+            return state + action.data;
+        case "DECREASE":
+            return state - action.data;
+        default:
+            return state;
+    }
+}
 
 function Exam() {
-    function reducer(state,action){
-        switch (action.type) {
-            case "INCREASE":
-                return state + action.data;
-            case "DECREASE":
-                return state - action.data;
-            default:
-                return state;
-        }
-    }
+   
 
     const [state,dispatch] = useReducer(reducer,0);
 

@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useState,useContext } from 'react';
 import './Editor.css'
-
-function Editor({onCreate}) {
+import { TodoContext } from '../App_todolist';
+function Editor() {
+    const {onCreate} = useContext(TodoContext);
     const [content, setContent] = useState("");
     
     const onChangeContent = (e)=>{

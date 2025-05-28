@@ -1,6 +1,9 @@
 import './TodoItem.css'
+import { useContext } from 'react';
+import { TodoContext } from '../App_todolist';
 
-function TodoItem({id,isDone,content,date,onDelete,onUpdate}) {
+function TodoItem({id,isDone,content,date}) {
+  const {onDelete , onUpdate} = useContext(TodoContext);
   const onClickDeleteButton = ()=> {
     onDelete(id);
   };
